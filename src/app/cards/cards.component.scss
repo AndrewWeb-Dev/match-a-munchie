@@ -1,0 +1,85 @@
+.cardFlexer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 750px;
+    margin: 0 auto;
+    @media all and (max-width:735px) {
+        width: 570px;
+    }
+    @media all and (max-width: 570px) {
+        width: 315px;
+    }
+}
+
+
+.cardUnselected {
+    background: url('../../assets/chef.png');
+    background-color: #FFF;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    margin: 10px;
+    width: calc(60px*1.2);
+    height: calc(85px*1.2);
+    @media all and (max-width:735px) {
+        width: calc(62px*.82);
+        height: calc(85px*.82);  
+    }
+    @media all and (max-width: 570px) {
+        margin: 7px;
+        width: calc(62px*.8);
+        height: calc(85px*.52);
+    }
+    p {
+        // display: none;
+        color: #FFF;
+        font-size: 10px;
+    }
+}
+.cardSelected {
+    text-align: center;
+    background: none;
+    background-color: #FFF;
+    position: relative;
+    outline: #000 inset 2px;
+    outline-offset: -7px;
+    border-radius: 5px;
+    @media all and (max-width: 570px) {
+        outline: 0;
+    }
+    img {
+        width: 80%;
+        height: auto;
+        position: absolute;
+        left: 0;
+        right: 0; 
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        @media all and (max-width: 570px) {
+            width:70%;
+            top: 5px;
+        }
+    }
+}
+
+.mainFlexer {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    @media all and (max-width:1055px) {
+        height: 90vh;
+    }
+}
+.cardContainer {
+    background: url('../../assets/minbackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .opaqueLayer {
+        height: inherit;
+        background: rgba(255,255,255,0.8);
+    }
+}

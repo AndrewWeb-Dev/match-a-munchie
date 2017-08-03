@@ -1,0 +1,18 @@
+.mainFlexer {
+    display: flex;
+    app-cards {
+        width: 75%;
+    }
+    app-scoreboard {
+        width: 338px;
+    }
+    @media all and (max-width: 1055px) {
+        flex-direction: column-reverse;
+        app-cards {
+            width: 100%;
+        }
+        app-scoreboard {
+            width: 100%;
+        }
+    }
+}

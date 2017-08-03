@@ -1,0 +1,124 @@
+h2,p {
+    margin: 0;
+}
+nav {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    h2 {
+        font-size: 1.4em;
+    }
+}
+.scoreProps {
+    padding: 15px;
+    p {
+        font-size: 1.1em;
+        margin: 20px 0;
+    }
+    .flexContainer {
+        max-width: 60%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .rightCol p {
+        color: lighten(#808080,10);
+    }
+    button {
+        margin: 20px auto;
+        width: 50%;
+        display: block;
+    }
+    .btn-flat {
+        height: auto;
+        display: block;
+        width: 160px;
+        margin: 10px auto;
+        transition: all 0.3s;
+        &:hover {
+            background: darken(#FFF,8);
+        }
+        i {
+            font-size: 2.4em;
+            
+        }
+        .iconContain{
+            text-align: center;
+            
+            p {
+                font-size: 0.7em;
+                margin: 0;  
+            }
+        }
+    }
+}
+.mobile {
+    // display: flex;
+    display: none;
+    justify-content: space-between;
+    color: #FFF;
+    align-items: center;
+    height: 10vh;
+    @media all and (max-width:1055px) {
+        display: flex;
+    }
+    h2 {
+        font-size: 1.4em;
+        padding: 5px;
+    }
+    p {
+        font-size:1em;
+        margin: 0;
+        padding: 5px;
+    }
+    .scoreProps {
+        padding: 0;
+        @media all and (max-width: 570px) {
+            font-size: .9em;
+        }
+    }
+    .restartBtn {
+        margin: 10px;
+        @media all and (max-width: 570px) {
+        font-size: .7em;
+        width: 100px;
+        }
+    }
+    .btnContainer {
+        max-width: 180px;
+        display: flex;
+        align-items: center;
+        .btn-flat {
+            width: auto;
+            color: #FFF;
+        }
+    }
+    .dropTrigger {
+        padding: 0;
+        width: 35px !important;
+        height: 35px;
+        display: none;
+    }
+    .dropdown-content {
+        p{
+            display: inline;
+            font-size: .60em;
+        }
+        i {
+            display: inline;
+        }
+    }
+}
+@media all and (max-width:500px) {
+    .mobileLrg {
+        display: none;
+    }
+    .mobile .dropTrigger {
+        display: block;
+    }
+}
+@media all and (max-width: 1055px) {
+    .desktop {
+        display: none;
+    }
+}

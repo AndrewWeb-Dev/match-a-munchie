@@ -1,0 +1,30 @@
+<section class="cardContainer">
+  <div class="opaqueLayer">
+    <div class="mainFlexer">
+      <div class="cardFlexer">
+        <div class="cardUnselected card" *ngFor='let card of cards; let i = index' [class.cardSelected]="card.selected === true"
+          (click)='cardCheck(i)'>
+          <div class="cardContents" *ngIf="card.selected">
+            <!-- <p>{{card.name}}<br>{{card.uniqueNum}}</p> -->
+            <img src="{{card.assetUrl}}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</section>
+<div id="modal1" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
+  <div class="modal-content" *ngIf="!isGameOver">
+    <h4>You scored {{scoreService.score}} points! Nice.</h4>
+    <p>That was sweet.</p>
+  </div>
+  <div class="modal-content" *ngIf="isGameOver">
+    <h4>Time is up!</h4>
+    <p>Care to try again?</p>
+  </div>
+  <div class="modal-footer">
+    <a class="waves-effect  btn grey" (click)="resetGame()">PLAY AGAIN</a>
+    <a class="waves-effect  btn grey" *ngIf="!isGameOver" href="https://twitter.com/intent/tweet?text=Mmmm!%20I%20scored%20{{scoreService.score}}%20points%20in%20Match%20a%20Munchie!%20Think%20you%20can%20beat%20that?%20http://munchies.andrew-thompson.co"><i class="fa fa-twitter" aria-hidden="true"></i>TWEET SCORE</a>
+  </div>
+
+</div>

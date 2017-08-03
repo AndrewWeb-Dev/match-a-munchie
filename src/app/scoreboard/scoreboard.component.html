@@ -1,0 +1,115 @@
+<div class=" red darken-1 mobile z-depth-1">
+  <!-- <h2>Timer &amp; Scoreboard</h2> -->
+  <button class="btn grey waves-effect waves-light restartBtn" (click)="restartGame()">Restart</button>
+  <div class="scoreProps">
+    <p>Time Remaining: {{scoreService.minutesRemaining}}:{{scoreService.secondsRemaining}}</p>
+    <p>Matches found: {{scoreService.matchingCards}}/16</p>
+  </div>
+  <div class="btnContainer">
+
+     <a class="waves-effect btn-flat mobileLrg">
+      <div class="iconContain">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </div>
+    </a>
+
+    <a href="https://twitter.com/intent/tweet?text=Mmm!%20How%20good%20is%20your%20memory%20and%20appetite?%20Play%20Match%20a%20Munchie!%20http://munchies.andrew-thompson.co"
+      class="waves-effect btn-flat mobileLrg">
+      <div class="iconContain">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </div>
+    </a>
+
+    <a class="waves-effect btn-flat mobileLrg">
+      <div class="iconContain">
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+      </div>
+    </a> 
+
+    <a materialize="dropdown" class="waves-effect waves-circle btn-flat dropTrigger" data-activates='dropdown1'>
+      <i class="material-icons">more_vert</i>
+    </a>
+
+  </div>
+
+</div>
+
+
+ <nav class="red darken-1 desktop">
+  <h2>Timer &amp; Scoreboard</h2>
+</nav>   
+
+ <div class="scoreProps desktop" >
+  <div class="flexContainer">
+    <div class="leftCol">
+      <p>Time Remaining:</p>
+      <p>Matches found:</p>
+    </div>
+    <div class="rightCol">
+      <p>{{scoreService.minutesRemaining}}:{{scoreService.secondsRemaining}} </p>
+      <p>{{scoreService.matchingCards}}/16</p>
+    </div>
+  </div>
+  <button class="btn grey waves-effect waves-light restartBtn" (click)="restartGame()">Restart</button>
+  <a class="waves-effect btn-flat">
+    <div class="iconContain">
+      <i class="fa fa-github" aria-hidden="true"></i>
+      <p class="label">View Code</p>
+    </div>
+  </a>
+
+  <a href="https://twitter.com/intent/tweet?text=Mmm!%20How%20good%20is%20your%20memory%20and%20appetite?%20Play%20Match%20a%20Munchie!%20http://munchies.andrew-thompson.co"
+    class="waves-effect btn-flat">
+    <div class="iconContain">
+      <i class="fa fa-twitter" aria-hidden="true"></i>
+      <p class="label">Tweet</p>
+    </div>
+  </a>
+
+  <a class="waves-effect btn-flat">
+    <div class="iconContain">
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+      <p class="label">Attributions</p>
+    </div>
+  </a>
+</div>   
+
+<div id="modal1" class="modal" materialize="modal" (init)="openModal()" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
+  <div class="modal-content">
+    <h4>Match a Munchie!</h4>
+    <p class="guideline">Instructions:</p>
+    <ol>
+      <li>Select a pair of desserts to see if they match deliciously.</li>
+      <li>Match all 16 pairs to win, but remember: you have to beat the clock!</li>
+      <li>Score extra scrumptious points for each second remaining on the clock. Bon appétit!</li>
+    </ol>
+  </div>
+  <div class="modal-footer">
+    <a class="waves-effect  btn grey" (click)="closeStartModal()">PLAY</a>
+  </div>
+
+</div>
+<ul id="dropdown1" class="dropdown-content">
+  <li>
+    <a class="waves-effect">
+      <div class="iconContain">
+        <i class="fa fa-pencil" aria-hidden="true"></i><p>Attributions</p>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="https://twitter.com/intent/tweet?text=Mmm!%20How%20good%20is%20your%20memory%20and%20appetite?%20Play%20Match%20a%20Munchie!%20http://munchies.andrew-thompson.co"
+      class="waves-effect">
+      <div class="iconContain">
+        <i class="fa fa-twitter" aria-hidden="true"></i><p>Tweet</p>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a class="waves-effect">
+      <div class="iconContain">
+        <i class="fa fa-github" aria-hidden="true"></i><p>view code</p>
+      </div>
+    </a>
+  </li>
+</ul>

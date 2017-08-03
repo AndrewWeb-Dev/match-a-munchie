@@ -4,17 +4,35 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { CardsComponent } from './cards/cards.component';
+import { ScoreboardComponent } from './scoreboard/scoreboard.component';
+import { OptionsComponent } from './options/options.component';
+
+import { CardService } from './card.service';
+import { ScoreService } from './score.service';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+
+//3rd party modules
+import { MaterializeModule } from "../../node_modules/angular2-materialize";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CardsComponent,
+    ScoreboardComponent,
+    OptionsComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MaterializeModule
   ],
-  providers: [],
+  providers: [
+    CardService,
+    ScoreService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
