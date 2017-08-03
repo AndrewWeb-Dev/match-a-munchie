@@ -4,7 +4,9 @@
         width: 75%;
     }
     app-scoreboard {
-        min-width: 338px;
+        @media all and (min-width: 1055px){
+            min-width: 338px;
+        }
         width: 25%;
     }
     @media all and (max-width: 1055px) {
