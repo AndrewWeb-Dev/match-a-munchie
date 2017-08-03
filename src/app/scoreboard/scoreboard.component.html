@@ -7,7 +7,7 @@
   </div>
   <div class="btnContainer">
 
-     <a class="waves-effect btn-flat mobileLrg">
+     <a class="waves-effect btn-flat mobileLrg" href="https://github.com/AndrewWeb-Dev/match-a-munchie">
       <div class="iconContain">
         <i class="fa fa-github" aria-hidden="true"></i>
       </div>
@@ -20,7 +20,7 @@
       </div>
     </a>
 
-    <a class="waves-effect btn-flat mobileLrg">
+    <a class="waves-effect btn-flat mobileLrg" (click)="triggerAttributions()">
       <div class="iconContain">
         <i class="fa fa-pencil" aria-hidden="true"></i>
       </div>
@@ -51,7 +51,7 @@
     </div>
   </div>
   <button class="btn grey waves-effect waves-light restartBtn" (click)="restartGame()">Restart</button>
-  <a class="waves-effect btn-flat">
+  <a class="waves-effect btn-flat" href="https://github.com/AndrewWeb-Dev/match-a-munchie">
     <div class="iconContain">
       <i class="fa fa-github" aria-hidden="true"></i>
       <p class="label">View Code</p>
@@ -66,7 +66,7 @@
     </div>
   </a>
 
-  <a class="waves-effect btn-flat">
+  <a class="waves-effect btn-flat" (click)="triggerAttributions()">
     <div class="iconContain">
       <i class="fa fa-pencil" aria-hidden="true"></i>
       <p class="label">Attributions</p>
@@ -75,7 +75,7 @@
 </div>   
 
 <div id="modal1" class="modal" materialize="modal" (init)="openModal()" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
-  <div class="modal-content">
+  <div class="modal-content" *ngIf="!attributions">
     <h4>Match a Munchie!</h4>
     <p class="guideline">Instructions:</p>
     <ol>
@@ -84,14 +84,36 @@
       <li>Score extra scrumptious points for each second remaining on the clock. Bon appétit!</li>
     </ol>
   </div>
+  <div class="modal-content attributions" *ngIf="attributions">
+    <h4>Attributions:</h4>
+    <ul>
+      <li>Banana Bread SVG created by Ariel Kotzer from the Noun Project</li>
+      <li>Brownie SVG created by Chorock(Green) from the Noun Project</li>
+      <li>Cake SVG created by andriwidodo from the Noun Project</li>
+      <li>Cinnamon Bun SVG created by Daniel Falk from the Noun Project</li>
+      <li>Croissant SVG created by Kaylen from the Noun Project</li>
+      <li>Cupcake SVG created by H Alberto Gongora from the Noun Project</li>
+      <li>Danish SVG created by Denis Sazhin from the Noun Project</li>
+      <li>Donut SVG created by asianson.design from the Noun Project</li>
+      <li>Gelato SVG created by Madeleine Bennett from the Noun Project</li>
+      <li>Macaron SVG created by Danil Polshin from the Noun Project</li>
+      <li>Muffin SVG created by Kaylen from the Noun Project</li>
+      <li>Sorbet SVG created by Imogen Oh from the Noun Project</li>
+      <li>Timbit SVG created by Made by Made from the Noun Project</li>
+      <li>Pastry SVG created by Kate Maldjian from the Noun Project</li>
+      <li>Dessert Background provided by FreePik</li>
+    </ul>
+  </div>
   <div class="modal-footer">
-    <a class="waves-effect  btn grey" (click)="closeStartModal()">PLAY</a>
+    <a class="waves-effect  btn grey" (click)="closeStartModal()" *ngIf="!attributions">PLAY</a>
+    <a class="waves-effect  btn grey" (click)="dismissAttributions()" *ngIf="attributions">DISMISS</a>
   </div>
 
 </div>
+
 <ul id="dropdown1" class="dropdown-content">
   <li>
-    <a class="waves-effect">
+    <a class="waves-effect" (click)="triggerAttributions()">
       <div class="iconContain">
         <i class="fa fa-pencil" aria-hidden="true"></i><p>Attributions</p>
       </div>
@@ -106,7 +128,7 @@
     </a>
   </li>
   <li>
-    <a class="waves-effect">
+    <a class="waves-effect" href="https://github.com/AndrewWeb-Dev/match-a-munchie">
       <div class="iconContain">
         <i class="fa fa-github" aria-hidden="true"></i><p>view code</p>
       </div>

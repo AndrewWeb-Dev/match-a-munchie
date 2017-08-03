@@ -17,10 +17,21 @@ export class ScoreboardComponent implements OnInit {
   public gameStarted: boolean = false;
   public gameOver: boolean;
   public gameWon = this.scoreService.gameWon;
+  public attributions:boolean = false;
 
   modalActions = new EventEmitter<string | MaterializeAction>();
 
   ngOnInit() {
+  }
+
+  public triggerAttributions() {
+    this.attributions = true;
+    this.modalActions.emit({action:"modal",params:['open']});
+  }
+
+  public dismissAttributions() {
+    this.modalActions.emit({action:"modal",params:['close']});
+    this.attributions = false;
   }
 
   openModal() {
