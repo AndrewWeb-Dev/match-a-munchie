@@ -110,7 +110,7 @@ export const CARDS: Card[] = [
         name: 'Lime Gelato',
         selected: false,
         matched: false,
-        assetUrl: './assets/gelato.svg',
+        assetUrl: './assets/Gelato.svg',
         cardNumber: 114
     },
     {

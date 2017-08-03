@@ -4,7 +4,8 @@
         width: 75%;
     }
     app-scoreboard {
-        width: 338px;
+        min-width: 338px;
+        width: 25%;
     }
     @media all and (max-width: 1055px) {
         flex-direction: column-reverse;
